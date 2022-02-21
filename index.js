@@ -36,16 +36,12 @@ function getPizzaOrder() {
   // if the user has added toppings, add toppingsFee multiplied by
   // the number of toppings added to pizza.cost
   // YOUR CODE HERE
-
-  pizza.toppings = toppings && toppings.trim();
-  console.log(pizza.toppings)
-  var toppingsArr = toppings && toppings.split(",")
-  console.log(toppingsArr)
-  if (toppings && toppings.trim()){
-  pizza.cost += toppingsFee * toppingsArr.length;
-  }
-  console.log(pizza.cost)
   
+  pizza.toppings = toppings && toppings.trim();
+  pizza.toppings=toppings.split(",");
+  if (toppings && toppings.trim()){
+  pizza.cost += toppingsFee * pizza.toppings.length;
+  }
 
   var extraCheese = confirm("Would you like extra cheese?")
   // HINT: confirm() returns a boolean
